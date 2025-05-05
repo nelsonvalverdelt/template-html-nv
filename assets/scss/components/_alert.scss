@@ -1,0 +1,405 @@
+.alert {
+  position: relative;
+  padding: 1rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: var(--nv-alert-box-shadow);
+  border-radius: var(--nv-alert-radius);
+  min-width: var(--nv-alert-min-width);
+  max-width: var(--nv-alert-max-width);
+  gap: var(--nv-alert-gap);
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    border-bottom-left-radius: var(--nv-alert-radius);
+    border-bottom-right-radius: var(--nv-alert-radius);
+  }
+  @each $color, $value in $control-colors {
+    &.alert-#{$color} {
+      &::after {
+        background-color: $value;
+      }
+      > .icon {
+        background-color: $value;
+      }
+    }
+  }
+
+  > .text {
+    font-family: "Font-Light";
+    font-size: var(--nv-control-font-size);
+  }
+
+  > .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 3px;
+    > em {
+      font-size: var(--nv-alert-icon-size);
+      height: var(--nv-alert-icon-size);
+      width: auto;
+      color: var(--nv-white);
+    }
+  }
+
+  > .close {
+    cursor: pointer;
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    > em {
+      color: var(--nv-dark);
+    }
+  }
+}
+
+.alert2 {
+  display: inline-flex;
+  align-items: center;
+  box-shadow: var(--nv-alert-box-shadow);
+  border-radius: var(--nv-alert-radius);
+  min-width: var(--nv-alert-min-width);
+  max-width: var(--nv-alert-max-width);
+  padding: 0.5rem;
+  gap: calc(var(--nv-alert-gap) - 0.25rem);
+  min-height: var(--nv-alert-min-height);
+  > .text {
+    display: inline-flex;
+    flex-direction: column;
+    > .title {
+      font-family: "Font-Medium";
+      font-size: var(--nv-control-font-size);
+    }
+    > .description {
+      font-family: "Font-Light";
+      font-size: var(--nv-control-font-size);
+    }
+  }
+
+  &::before {
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 4px;
+  }
+  @each $color, $value in $control-colors {
+    &.alert-#{$color} {
+      > .icon {
+        background-color: $value;
+      }
+      &::before {
+        background-color: $value;
+      }
+    }
+  }
+
+  > .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 3px;
+    > em {
+      font-size: var(--nv-alert-icon-size);
+      height: var(--nv-alert-icon-size);
+      width: auto;
+      color: var(--nv-white);
+    }
+  }
+
+  > .close {
+    cursor: pointer;
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+    > em {
+      color: var(--nv-dark);
+    }
+  }
+}
+
+.alert3 {
+  position: relative;
+  padding: 1rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: var(--nv-alert-box-shadow);
+  border-radius: var(--nv-alert-radius);
+  min-width: var(--nv-alert-min-width);
+  max-width: var(--nv-alert-max-width);
+  gap: var(--nv-alert-gap);
+  @each $color, $value in $control-colors {
+    &.alert-#{$color} {
+      background-color: $value;
+      > .icon {
+        > em {
+          color: $value;
+        }
+      }
+    }
+  }
+  > .text {
+    font-family: "Font-Light";
+    font-size: var(--nv-control-font-size);
+  }
+
+  > .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 3px;
+    background-color: var(--nv-white);
+    > em {
+      font-size: var(--nv-alert-icon-size);
+      height: var(--nv-alert-icon-size);
+      width: auto;
+      color: var(--nv-white);
+    }
+  }
+
+  > .close {
+    cursor: pointer;
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    > em {
+      color: var(--nv-white);
+    }
+  }
+}
+
+.alert4 {
+  position: relative;
+  padding: 1rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: var(--nv-alert-box-shadow);
+  border-radius: var(--nv-alert-radius);
+  min-width: var(--nv-alert-min-width);
+  max-width: var(--nv-alert-max-width);
+  gap: var(--nv-alert-gap);
+  @each $color, $value in $control-rgb-colors {
+    &.alert-#{$color} {
+      border: 1px solid rgba($value, 0.5);
+      background-color: rgba($value, 0.2);
+      > .icon {
+        border: 1px solid rgba($value, 0.5);
+        > em {
+          color: rgb($value);
+        }
+      }
+    }
+  }
+  > .text {
+    font-family: "Font-Light";
+    font-size: var(--nv-control-font-size);
+  }
+
+  > .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 3px;
+    background-color: var(--nv-white);
+    > em {
+      font-size: var(--nv-alert-icon-size);
+      height: var(--nv-alert-icon-size);
+      width: auto;
+      color: var(--nv-white);
+    }
+  }
+
+  > .close {
+    cursor: pointer;
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    > em {
+      color: var(--nv-dark);
+    }
+  }
+}
+
+.alert5 {
+  position: relative;
+  padding: 1rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: var(--nv-alert-box-shadow);
+  border-radius: var(--nv-alert-radius);
+  min-width: var(--nv-alert-min-width);
+  max-width: var(--nv-alert-max-width);
+  gap: var(--nv-alert-gap);
+  min-height: var(--nv-alert-min-height);
+  @each $color, $value in $control-colors {
+    &.alert-#{$color} {
+      background-color: $value;
+      > .icon {
+        > em {
+          color: $value;
+        }
+      }
+    }
+  }
+
+  > .text {
+    display: inline-flex;
+    flex-direction: column;
+    > .title {
+      font-family: "Font-Medium";
+      font-size: var(--nv-control-font-size);
+    }
+    > .description {
+      font-family: "Font-Light";
+      font-size: var(--nv-control-font-size);
+    }
+  }
+
+  > .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 3px;
+    background-color: var(--nv-white);
+    > em {
+      font-size: var(--nv-alert-icon-size);
+      height: var(--nv-alert-icon-size);
+      width: auto;
+      color: var(--nv-white);
+    }
+  }
+
+  > .close {
+    cursor: pointer;
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    > em {
+      color: var(--nv-white);
+    }
+  }
+}
+
+.alert6 {
+  position: relative;
+  padding: 1rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: var(--nv-alert-box-shadow);
+  border-radius: var(--nv-alert-radius);
+  min-width: var(--nv-alert-min-width);
+  max-width: var(--nv-alert-max-width);
+  gap: var(--nv-alert-gap);
+  min-height: var(--nv-alert-min-height);
+  @each $color, $value in $control-rgb-colors {
+    &.alert-#{$color} {
+      border: 1px solid rgba($value, 0.5);
+      background-color: rgba($value, 0.2);
+      > .text {
+        > .title {
+          color: rgb($value);
+        }
+      }
+      > .icon {
+        border: 1px solid rgba($value, 0.5);
+        > em {
+          color: rgb($value);
+        }
+      }
+    }
+  }
+
+  > .text {
+    display: inline-flex;
+    flex-direction: column;
+    > .title {
+      font-family: "Font-Medium";
+      font-size: var(--nv-control-font-size);
+    }
+    > .description {
+      font-family: "Font-Light";
+      font-size: var(--nv-control-font-size);
+    }
+  }
+
+  > .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 3px;
+    background-color: var(--nv-white);
+    > em {
+      font-size: var(--nv-alert-icon-size);
+      height: var(--nv-alert-icon-size);
+      width: auto;
+      color: var(--nv-white);
+    }
+  }
+
+  > .close {
+    cursor: pointer;
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    > em {
+      color: var(--nv-dark);
+    }
+  }
+}
+
+.alert-top-center {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.alert-top-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+.alert-top-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.alert-bottom-center {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.alert-bottom-right {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+.alert-bottom-left {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.alert-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

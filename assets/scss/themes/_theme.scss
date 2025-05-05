@@ -1,0 +1,19 @@
+.main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  &:has(> .menu > .menu-header > .menu-header-nav > .action-view-mode > input[type="checkbox"]:checked) {
+    > .main-body {
+      margin-left: $menu-minimized;
+    }
+  }
+  > .main-body {
+    width: 100%;
+    margin-left: $menu-maximized;
+    transition: margin-left 0.25s ease-in-out;
+  }
+  .container {
+    width: 100%;
+  }
+}
